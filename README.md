@@ -6,59 +6,31 @@
 This lab demonstrates creation of users in Active Directory using a powershell script. Clients PC will be addressed in the domain network using DHCP server and routed to the internet using NAT setup in the Domain controller.
 <br />
 
+
 <h2>Lab setup</h2>
 <p align="center">
 Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/paulokeyo/AD-DS/blob/main/assets/Lab%20Topology.png?raw=true" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
+<h2>Prerequisites </h2>
+A Computer running two VMs, Windows server 2019(Domain controller) and Windows 10(Client) 
+ 
+- [Windows 10](https://www.microsoft.com/en-us/software-download/windows10ISO)
+- [Windows server 2019](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-<h2>Languages and Utilities Used</h2>
+### Configure the Network adapters of the Domain Controller
+1. In VirtualBox Network settings of the VM attach Adapter 1 to NAT and Adapter 2 to Internal network
+2. Run the Domain Controller VM and rename the 2 network connections to Internal network and Internet
+3. Configure the Internal network connection
+<img src="https://github.com/paulokeyo/AD-DS/blob/main/assets/7.png?raw=true" />
 
-- <b>PowerShell</b> 
-- <b>Diskpart</b>
+### Install Active Directory and Domain Services in the Domain Controller
+<img src="https://github.com/paulokeyo/AD-DS/blob/main/assets/9.png?raw=true"/>
+1. In Service manager dashboard, click Add roles and features then add the AD DM feature
+2. Add a new forest and give the Root domain name the name of your choice then deploy
 
-<h2>Environments Used </h2>
-
-- <b>Windows 10</b> (21H2)
-
-<h2>Program walk-through:</h2>
-
-<p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
+### Set up NAT(Network Address Translation)
+1. In Service manager dashboard, click Add roles and features then add Remote Access
+   
