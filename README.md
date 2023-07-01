@@ -3,7 +3,7 @@
  ### [Step-by-step tutorial](https://medium.com/@okeyopaul/step-by-step-creating-of-active-directory-and-adding-users-adf18611f0da)
 
 <h2>Description</h2>
-This project demonstrate creation of users in Active Directory using a powershell script. Clients PC will be added to the domain network using DHCP server and routed to the internet using NAT setup in the Domain controller.
+This lab demonstrates creation of users in Active Directory using a powershell script. Clients PC will be addressed in the domain network using DHCP server and routed to the internet using NAT setup in the Domain controller.
 <br />
 
 <h2>Lab setup</h2>
