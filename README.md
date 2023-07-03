@@ -1,6 +1,6 @@
 <h1>Active Directory, Domain users and client PC in Domain network </h1>
 
- ### [Step-by-step tutorial](https://medium.com/@okeyopaul/step-by-step-creating-of-active-directory-and-adding-users-adf18611f0da)
+ ### [Step-by-step tutorial article](https://medium.com/@okeyopaul/step-by-step-creating-of-active-directory-and-adding-users-adf18611f0da)
 
 <h2>Description</h2>
 This lab demonstrates creation of users in Active Directory using a powershell script. Clients PC will be addressed in the domain network using DHCP server and routed to the internet using NAT and DNS setup in the Domain controller.
